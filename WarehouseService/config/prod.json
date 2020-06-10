@@ -1,0 +1,5 @@
+{
+    "PORT": "8081",
+    "DB_URL": "mongodb://mongodbuser:testpass12345@mongodb:27017/warehouse-service?connectTimeoutMS=2000&bufferCommands=false&authSource=admin",
+    "RABBIT_MQ_URL": "amqp://rabbitmquser:testpass12345@rabbitmq:5672"
+}

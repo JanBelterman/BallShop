@@ -1,0 +1,8 @@
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\bin\Debug\netstandard2.1\Ball.Infrastructure.Messaging.deps.json
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\bin\Debug\netstandard2.1\Ball.Infrastructure.Messaging.dll
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\bin\Debug\netstandard2.1\Ball.Infrastructure.Messaging.pdb
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\obj\Debug\netstandard2.1\Infrastructure.Messaging.csprojAssemblyReference.cache
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\obj\Debug\netstandard2.1\Infrastructure.Messaging.AssemblyInfoInputs.cache
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\obj\Debug\netstandard2.1\Infrastructure.Messaging.AssemblyInfo.cs
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\obj\Debug\netstandard2.1\Ball.Infrastructure.Messaging.dll
+C:\Users\jorri\Documents\Avans\SolutionArchitecture\NotificationService\Infrastructure.Messaging\obj\Debug\netstandard2.1\Ball.Infrastructure.Messaging.pdb

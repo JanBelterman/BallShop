@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "vuLKzhk/1I1GQ0KStSO5Jjs2ZTjVTqVz2mfsVJqZVkTr7WLERsYa2bCxTsTq0wiOUhP7DREQEQf5OG07huRcrA==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\jorri\\Documents\\Avans\\SolutionArchitecture\\NotificationService\\Infrastructure.Messaging\\Infrastructure.Messaging.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jorri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\jorri\\.nuget\\packages\\polly\\7.2.0\\polly.7.2.0.nupkg.sha512",
+    "C:\\Users\\jorri\\.nuget\\packages\\rabbitmq.client\\5.1.2\\rabbitmq.client.5.1.2.nupkg.sha512",
+    "C:\\Users\\jorri\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",
+    "C:\\Users\\jorri\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

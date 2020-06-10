@@ -1,0 +1,5 @@
+{
+  "PORT": "8081",
+  "DB_URL": "mongodb://localhost/warehouse-service",
+  "RABBIT_MQ_URL": "amqp://rabbitmquser:testpass12345@localhost:5672"
+}

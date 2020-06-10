@@ -1,0 +1,128 @@
+version: '3'
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmqhost
+    volumes:
+      - rabbitmqdata:/var/lib/rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=rabbitmquser
+      - RABBITMQ_DEFAULT_PASS=testpass12345
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodbhost
+    volumes:
+      - mongodbdata:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodbuser
+      - MONGO_INITDB_ROOT_PASSWORD=testpass12345
+    
+  sqlserver:
+    image: microsoft/mssql-server-linux:latest
+    container_name: sqlserver
+    volumes:
+        - sqlserverdata:/var/opt/mssql 
+    ports:
+        - "1434:1433"
+    environment:
+        - ACCEPT_EULA=Y 
+        - MSSQL_PID=Developer
+        - SA_PASSWORD=8jkGh47hnDw89Haq8LN2
+
+  mailserver:
+    image: djfarrelly/maildev
+    container_name: mailserver
+    ports:
+        - "25:25"
+        - "4000:80"
+
+  logserver:
+      image: datalust/seq:latest
+      container_name: logserver
+      ports:
+          - "5341:80"
+      environment:
+          - ACCEPT_EULA=Y 
+
+  inventoryservice:
+    image: ball/inventoryservice:1.0
+    build: InventoryService
+    container_name: InventoryService
+    depends_on:
+        - rabbitmq
+    ports:
+        - "8080:8080"
+    environment:
+        - NODE_ENV=prod
+
+  orderservice:
+    image: ball/orderservice:1.0
+    build: OrderService
+    container_name: OrderService
+    depends_on:
+      - rabbitmq
+    ports:
+      - "3050:3050"
+    environment:
+      - NODE_ENV=prod
+
+  Paymentservice:
+    image: ball/paymentservice:1.0
+    build: PaymentService
+    container_name: PaymentService
+    depends_on:
+      - rabbitmq
+    ports:
+      - "3060:3060"
+    environment:
+      - NODE_ENV=prod
+
+  notificationservice:
+    image: ball/notificationservice:1.4.29
+    build: NotificationService
+    container_name: notificationservice
+    depends_on:
+        - rabbitmq
+        - sqlserver
+        - mailserver
+    environment:
+        - DOTNET_ENVIRONMENT=Production
+
+  customerservice:
+    image: ball/customerservice:1.5.10
+    build: CustomerService
+    container_name: customerservice
+    depends_on:
+      - rabbitmq
+      - sqlserver
+      - mailserver
+    ports:
+      - "5000:80"
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+
+  warehouseservice:
+    image: ball/warehouseservice:1.0
+    build: WarehouseService
+    container_name: WarehouseService
+    depends_on:
+        - rabbitmq
+    ports:
+        - "8081:8081"
+    environment:
+        - NODE_ENV=prod
+
+volumes:
+  rabbitmqdata:
+  mongodbdata:
+  sqlserverdata:
+    external: true    
